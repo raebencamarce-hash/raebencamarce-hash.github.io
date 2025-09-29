@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CAMARCE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        h1, .qq {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex; 
+            justify-content: center;
+            padding: 15px;
+            gap: 25px; 
+            background-color: rgb(57, 138, 170); 
+            color: aliceblue;
+        }
+        .q {
+            text-align: center;
+            background-color: rgb(63, 117, 139);
+            padding: 40px 20px;
+            letter-spacing: 2px;
+            color: aliceblue;
+        }
+         button {
+            background: none;
+            border: none;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+        @media (max-width: 480px) {
+        button {
+        font-size: 14px;
+        padding: 8px 10px;
+        }
+
+        .q {
+        font-size: 20px;
+        padding: 20px 10px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="q">MY PORTFOLIO</h1>
+    <div class="container" id="cont">
+        <div class="seatwork"><button onclick="showContent('seat')"><p class="qq">SEATWORK</p></button></div>
+        <div class="quiz"><button onclick="showContent('qui')"><p class="qq">QUIZZES</p></button></div>
+        <div class="lab"><button onclick="showContent('labb')"><p class="qq">LAB ACTIVITY</p></button></div>
+        <div class="exam"><button onclick="showContent('ex')"><p class="qq">EXAM</p></button></div>
+    </div>
+    <script>
+    function showContent(category) {
+      const sections = document.querySelectorAll('.content');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      document.getElementById(category).classList.add('active');
+    }
+  </script>
+</body>
+</html>
